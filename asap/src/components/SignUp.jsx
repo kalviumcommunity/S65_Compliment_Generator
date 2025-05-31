@@ -17,7 +17,11 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
+      const response =await axios.post('https://s65-compliment-generator.onrender.com/api/user/add', userData);
+
       const response = await axios.post('https://s65-compliment-generator.onrender.com/api/user/add', userData);
+
       const data = response.data; 
       alert(data.message || 'Signup successful!');
       
